@@ -23,12 +23,9 @@ typedef NSUInteger SVProgressHUDMaskType;
 
 + (void)show;
 + (void)showWithMaskType:(SVProgressHUDMaskType)maskType;
+
 + (void)showWithStatus:(NSString*)status;
 + (void)showWithStatus:(NSString*)status maskType:(SVProgressHUDMaskType)maskType;
-
-+ (void)showProgress:(CGFloat)progress;
-+ (void)showProgress:(CGFloat)progress status:(NSString*)status;
-+ (void)showProgress:(CGFloat)progress status:(NSString*)status maskType:(SVProgressHUDMaskType)maskType;
 
 + (void)setStatus:(NSString*)string; // change the HUD loading status while it's showing
 
@@ -43,11 +40,11 @@ typedef NSUInteger SVProgressHUDMaskType;
 
 
 // deprecated June 9th; custom durations encourages uncessarily long status strings (inappropriate, use UIAlertView instead)
-+ (void)showSuccessWithStatus:(NSString *)string duration:(NSTimeInterval)duration DEPRECATED_ATTRIBUTE;
++ (void)showSuccessWithStatus:(NSString *)string duration:(NSTimeInterval)duration;
 + (void)showErrorWithStatus:(NSString *)string duration:(NSTimeInterval)duration DEPRECATED_ATTRIBUTE;
 
 // deprecated June 9th; use the showWithSuccess/Error methods instead
-+ (void)dismissWithSuccess:(NSString*)successString DEPRECATED_ATTRIBUTE; 
++ (void)dismissWithSuccess:(NSString*)successString DEPRECATED_ATTRIBUTE;
 + (void)dismissWithSuccess:(NSString*)successString afterDelay:(NSTimeInterval)seconds DEPRECATED_ATTRIBUTE;
 + (void)dismissWithError:(NSString*)errorString DEPRECATED_ATTRIBUTE;
 + (void)dismissWithError:(NSString*)errorString afterDelay:(NSTimeInterval)seconds DEPRECATED_ATTRIBUTE;
